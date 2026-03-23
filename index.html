@@ -12,7 +12,8 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#0b1120;color:#fff}
 
-  .whatsapp-float::after{
+/* WhatsApp Pulse Animation */
+.whatsapp-float::after{
   content:'';
   position:absolute;
   width:100%;
@@ -22,12 +23,11 @@ body{background:#0b1120;color:#fff}
   animation:pulse 1.5s infinite;
   z-index:-1;
 }
-
 @keyframes pulse{
   0%{transform:scale(1); opacity:0.7;}
   100%{transform:scale(1.8); opacity:0;}
 }
-  
+
 /* NAV */
 nav{
   position:fixed;
@@ -158,25 +158,10 @@ nav ul li:hover{color:#38bdf8}
   border-radius:15px;
 }
 
-/* SOCIAL */
-.socials{
-  position:fixed;
-  top:50%;
-  right:20px;
-  transform:translateY(-50%);
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-.socials a{
-  color:#fff;
-  font-size:20px;
-  padding:12px;
-  border-radius:50%;
-}
+
 .youtube{background:#ff0000}
 
-/* WHATSAPP */
+/* WHATSAPP FINAL FIX */
 .whatsapp-float{
   position:fixed;
   bottom:20px;
@@ -187,6 +172,17 @@ nav ul li:hover{color:#38bdf8}
   padding:15px;
   border-radius:50%;
   box-shadow:0 10px 20px rgba(0,0,0,0.4);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  z-index:1000;
+  overflow:hidden;
+}
+.whatsapp-float i{
+  position:relative;
+  z-index:2;
 }
 .whatsapp-float:hover{transform:scale(1.1)}
 
@@ -265,13 +261,13 @@ footer{
   </ul>
 </nav>
 
+
 <a href="https://wa.me/919663321579" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <section id="home" class="hero">
 
-  <!-- Karnataka Animation -->
   <div class="karnataka-box">
     <div class="circle">
       <h2>KA</h2>
@@ -284,7 +280,7 @@ footer{
   <p>If you are interested in learning in Kannada, you are welcome to our channel.</p>
 
   <button onclick="window.open('https://youtube.com','_blank')">
-    📺 Visit My YouTube
+    📺 Visit Our Channel
   </button>
 
 </section>
