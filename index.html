@@ -26,7 +26,6 @@ nav{
 }
 nav h1{color:#38bdf8}
 
-/* MENU */
 nav ul{
   display:flex;
   gap:20px;
@@ -70,6 +69,30 @@ nav ul li:hover{color:#38bdf8}
   cursor:pointer;
 }
 
+/* Karnataka Animation */
+.karnataka-box{
+  text-align:center;
+  margin-bottom:20px;
+  animation:fadeIn 2s ease;
+}
+.circle{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:linear-gradient(to bottom, #FFD700 50%, #C8102E 50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+  animation:float 3s infinite ease-in-out;
+}
+.circle h2{color:#000;}
+.karnataka-text{
+  margin-top:10px;
+  font-size:20px;
+  animation:glow 2s infinite alternate;
+}
+
 /* SECTION */
 .section{padding:80px 50px}
 .section h3{text-align:center;margin-bottom:30px}
@@ -107,7 +130,7 @@ nav ul li:hover{color:#38bdf8}
 }
 .gallery img:hover{transform:scale(1.05)}
 
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 .testimonials{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -148,7 +171,6 @@ nav ul li:hover{color:#38bdf8}
   padding:15px;
   border-radius:50%;
   box-shadow:0 10px 20px rgba(0,0,0,0.4);
-  z-index:1000;
 }
 .whatsapp-float:hover{transform:scale(1.1)}
 
@@ -192,6 +214,20 @@ nav ul li:hover{color:#38bdf8}
   }
 }
 
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.8);}
+  to{opacity:1; transform:scale(1);}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+@keyframes glow{
+  from{text-shadow:0 0 5px #FFD700;}
+  to{text-shadow:0 0 15px #C8102E;}
+}
+
 footer{
   text-align:center;
   padding:20px;
@@ -204,16 +240,12 @@ footer{
 
 <nav>
   <h1>Sabanna Master</h1>
-
   <div class="hamburger" onclick="toggleMenu()">☰</div>
-
   <ul id="menu">
     <li onclick="scrollToSection('home')">Home</li>
     <li onclick="scrollToSection('about')">About</li>
     <li onclick="scrollToSection('videos')">Videos</li>
-    <li>
-      <a href="Hack intro index.html" class="plain-link" target="_blank">Main</a>
-    </li>
+    <li><a href="Hack intro index.html" class="plain-link" target="_blank">Main</a></li>
   </ul>
 </nav>
 
@@ -228,9 +260,23 @@ footer{
 </a>
 
 <section id="home" class="hero">
+
+  <!-- Karnataka Animation -->
+  <div class="karnataka-box">
+    <div class="circle">
+      <h2>KA</h2>
+    </div>
+    <div class="karnataka-text">ಕರ್ನಾಟಕ 💛❤️</div>
+  </div>
+
   <h2 id="dynamicText"></h2>
+
   <p>If you are interested in learning in Kannada, you are welcome to our channel.</p>
-  <button onclick="window.open('https://youtube.com','_blank')">📺 Visit My YouTube</button>
+
+  <button onclick="window.open('https://youtube.com','_blank')">
+    📺 Visit My YouTube
+  </button>
+
 </section>
 
 <section class="section">
@@ -244,7 +290,7 @@ footer{
 <section id="about" class="section">
   <h3>About Me</h3>
   <p style="text-align:center;max-width:700px;margin:auto">
-    My name is Sabanna, originally from Wadi Junction, and I have been in Bangalore for 20+ years. I share educational content in Kannada.
+    My name is Sabanna, originally from Wadi Junction, and I have been in Bangalore for 20+ years.
   </p>
 </section>
 
@@ -268,10 +314,10 @@ footer{
 <section class="section">
   <h3>Student Feedback</h3>
   <div class="testimonials">
-    <div class="testimonial">"Sir explanations are very easy to understand!"</div>
-    <div class="testimonial">"Your videos are very informative."</div>
+    <div class="testimonial">"Sir explanations are very easy!"</div>
+    <div class="testimonial">"Very informative videos."</div>
     <div class="testimonial">"Best Kannada teaching channel!"</div>
-    <div class="testimonial">"Thank you for teaching in Kannada"</div>
+    <div class="testimonial">"Thank you sir!"</div>
   </div>
 </section>
 
