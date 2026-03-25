@@ -3,115 +3,191 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accordion Career Guide</title>
+<title>Premium Career Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f0f4f8;
-    margin: 0;
-    padding: 20px;
+:root{
+  --bg:#0b1220;
+  --panel:#0e172a;
+  --text:#e6e9ef;
+  --muted:#9aa3b2;
+  --accent:#7c9cff;
+  --accent2:#22d3ee;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 0% 0%, rgba(124,156,255,.25), transparent),
+    radial-gradient(800px 400px at 100% 0%, rgba(34,211,238,.2), transparent),
+    var(--bg);
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
+header{
+  text-align:center;
+  padding:60px 16px 30px;
+  animation:fadeDown .7s ease both;
+}
+header h1{
+  margin:0 0 10px;
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text; color:transparent;
+}
+header p{margin:0;color:var(--muted);font-size:14px}
+
+.container{max-width:960px;margin:auto;padding:20px}
+
+.track{position:relative;padding-left:26px}
+.track::before{
+  content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;
+  background:linear-gradient(var(--accent), transparent);
 }
 
-/* Accordion container */
-.accordion {
-    max-width: 700px;
-    margin: 0 auto;
+.item{position:relative;margin:20px 0;opacity:0;transform:translateY(20px);animation:fadeUp .7s forwards}
+.item:nth-child(1){animation-delay:.2s}
+.item:nth-child(2){animation-delay:.4s}
+.item:nth-child(3){animation-delay:.6s}
+.item:nth-child(4){animation-delay:.8s}
+
+.dot{
+  position:absolute;left:4px;top:18px;width:14px;height:14px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 10px rgba(34,211,238,.6);
 }
 
-.accordion-item {
-    background: #fff;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
+.card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:20px;
+  backdrop-filter:blur(10px);
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
 }
 
-.accordion-header {
-    padding: 15px 20px;
-    cursor: pointer;
-    background: #4CAF50;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+.card:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 15px 35px rgba(0,0,0,.5);
+  border-color:rgba(124,156,255,.5);
 }
 
-.accordion-header:hover {
-    background: #45a049;
+.card::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.15), transparent);
+  opacity:0;transform:translateX(-60%);
+}
+.card:hover::after{opacity:1;animation:shine .9s}
+
+.title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.title h2{margin:0;font-size:1.2rem;color:#fff}
+.badge{
+  font-size:12px;padding:4px 10px;border-radius:20px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#000;font-weight:600;
 }
 
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    background: #f9f9f9;
-    padding: 0 20px;
+.list{display:grid;gap:6px}
+.list p{margin:0;font-size:14px}
+.sub{color:var(--muted)}
+
+.icon{
+  position:absolute;right:15px;top:15px;font-size:18px;opacity:.6
 }
 
-.accordion-content p {
-    margin: 15px 0;
-    font-size: 14px;
-}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shine{to{transform:translateX(60%);opacity:0}}
+
 </style>
 </head>
 <body>
 
-<h2>🎓 Accordion Career Guide</h2>
+<header>
+  <h1>Career Guide</h1>
+  <p>Simple, attractive & premium path after 10th & 12th</p>
+</header>
 
-<div class="accordion">
+<div class="container">
+<div class="track">
 
-    <!-- After 10th -->
-    <div class="accordion-item">
-        <div class="accordion-header">After 10th</div>
-        <div class="accordion-content">
-            <p>🔬 Science – Doctor, Engineer (Engineering & Medical fields)</p>
-            <p>💼 Commerce – CA, Banker (Business & Finance)</p>
-            <p>🎨 Arts – Lawyer, Journalist (Creative & Social fields)</p>
-            <p>🛠 Diploma – Technician (Technical Courses)</p>
-            <p>⚙ ITI – Electrician, Plumber (Skill-Based Training)</p>
-        </div>
+<div class="item">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="icon">🎓</div>
+    <div class="title">
+      <h2>After 10th</h2>
+      <span class="badge">Start</span>
     </div>
-
-    <!-- After 12th -->
-    <div class="accordion-item">
-        <div class="accordion-header">After 12th</div>
-        <div class="accordion-content">
-            <p>🔬 Science – Doctor, Engineer (Engineering & Medical)</p>
-            <p>💼 Commerce – Accountant, Manager (B.Com, BBA, CA)</p>
-            <p>🎨 Arts – Teacher, Lawyer (BA, Law, Media)</p>
-            <p>💻 Jobs – Employee, Freelancer (Govt Jobs & Skills)</p>
-        </div>
+    <div class="list">
+      <p>📘 Science → Doctor / Engineer</p>
+      <p>📗 Commerce → Business / Accounts</p>
+      <p>📕 Arts → Govt jobs / Teaching</p>
+      <p class="sub">🛠 ITI / Diploma → Quick job + skill</p>
     </div>
-
+  </div>
 </div>
 
-<script>
-// Accordion functionality
-const headers = document.querySelectorAll('.accordion-header');
+<div class="item">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="icon">📚</div>
+    <div class="title">
+      <h2>After 12th</h2>
+      <span class="badge">Choose</span>
+    </div>
+    <div class="list">
+      <p>Science → Engineering / Medical</p>
+      <p>Commerce → B.Com / CA / Business</p>
+      <p>Arts → BA / Law / Govt exams</p>
+      <p class="sub">💼 Direct jobs → Office / Sales / Govt</p>
+    </div>
+  </div>
+</div>
 
-headers.forEach(header => {
-    header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const maxHeight = content.style.maxHeight;
+<div class="item">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="icon">💡</div>
+    <div class="title">
+      <h2>Smart Option</h2>
+      <span class="badge">Best</span>
+    </div>
+    <div class="list">
+      <p>✔ Study + Skill together</p>
+      <p>💻 Computer skills</p>
+      <p>🎨 Design</p>
+      <p>🎬 Editing / 🌐 Online work</p>
+    </div>
+  </div>
+</div>
 
-        // Close all open items
-        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+<div class="item">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="icon">🏆</div>
+    <div class="title">
+      <h2>Final Formula</h2>
+      <span class="badge">Rule</span>
+    </div>
+    <div class="list">
+      <p>👉 Interest + Skill + Hard Work = Success</p>
+      <p>After 10th → Choose stream</p>
+      <p>After 12th → Choose course/job</p>
+      <p class="sub">Always → Learn skills</p>
+    </div>
+  </div>
+</div>
 
-        // Toggle current item
-        if (!maxHeight || maxHeight === "0px") {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = null;
-        }
-    });
-});
-</script>
+</div>
+</div>
 
 </body>
 </html>
