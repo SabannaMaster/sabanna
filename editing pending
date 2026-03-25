@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accordion Career Guide</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Accordion container */
+.accordion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px 20px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.accordion-header:hover {
+    background: #45a049;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #f9f9f9;
+    padding: 0 20px;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<h2>🎓 Accordion Career Guide</h2>
+
+<div class="accordion">
+
+    <!-- After 10th -->
+    <div class="accordion-item">
+        <div class="accordion-header">After 10th</div>
+        <div class="accordion-content">
+            <p>🔬 Science – Doctor, Engineer (Engineering & Medical fields)</p>
+            <p>💼 Commerce – CA, Banker (Business & Finance)</p>
+            <p>🎨 Arts – Lawyer, Journalist (Creative & Social fields)</p>
+            <p>🛠 Diploma – Technician (Technical Courses)</p>
+            <p>⚙ ITI – Electrician, Plumber (Skill-Based Training)</p>
+        </div>
+    </div>
+
+    <!-- After 12th -->
+    <div class="accordion-item">
+        <div class="accordion-header">After 12th</div>
+        <div class="accordion-content">
+            <p>🔬 Science – Doctor, Engineer (Engineering & Medical)</p>
+            <p>💼 Commerce – Accountant, Manager (B.Com, BBA, CA)</p>
+            <p>🎨 Arts – Teacher, Lawyer (BA, Law, Media)</p>
+            <p>💻 Jobs – Employee, Freelancer (Govt Jobs & Skills)</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Accordion functionality
+const headers = document.querySelectorAll('.accordion-header');
+
+headers.forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const maxHeight = content.style.maxHeight;
+
+        // Close all open items
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+
+        // Toggle current item
+        if (!maxHeight || maxHeight === "0px") {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = null;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
