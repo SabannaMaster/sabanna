@@ -305,21 +305,175 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
         font-size: 0.7rem;
     }
 }
+
+/*Life core css*/
+.root1 {
+            --primary: #4361ee;
+            --accent: #f72585;
+            --glass: rgba(255, 255, 255, 0.85);
+            --bg: #f8f9fc;
+        }
+
+        .corebody1 {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .corebody {
+            background: var(--bg);
+            background-image: radial-gradient(circle at 2px 2px, #e2e8f0 1px, transparent 0);
+            background-size: 24px 24px;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header1 {
+            text-align: center;
+            padding: 30px 15px 15px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .header1 h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color:white ;
+            font-weight: 800;
+        }
+
+        .header1 p {
+            font-size: 0.85rem;
+            color: aqua;
+            margin-top: 4px;
+        }
+
+        /* Container & Grid */
+        .container2 {
+            display: grid;
+            max-width: 900px;
+            width: 95%;
+            margin: 10px auto;
+            /* Desktop: 4 columns */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            perspective: 1000px;
+        }
+
+        /* CARD STYLING */
+        .card2 {
+            background: var(--glass);
+            border: 1px solid #fff;
+            border-radius: 16px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            opacity: 0;
+            animation: cardPop 0.6s ease forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 160px;
+        }
+
+        .card2:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 12px 25px rgba(67, 97, 238, 0.15);
+            border-color: var(--primary);
+        }
+
+        .icon1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .card2 h2 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 2px;
+        }
+
+        .kn-sub {
+            font-size: 0.75rem;
+            color: white;
+            font-weight: 600;
+            display: block;
+        }
+
+        .desc {
+            font-size: 0.7rem;
+            color: white;
+            margin-top: 8px;
+            line-height: 1.2;
+        }
+
+        /* MOBILE VIEW OPTIMIZATION */
+        @media (max-width: 600px) {
+            .container2 {
+                /* 2-column grid for small mobile view */
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .header1 { padding: 20px 10px 5px; }
+            .header1 h1 { font-size: 1.4rem; }
+
+            .card2 {
+                padding: 12px;
+                min-height: 130px; /* Smaller card height */
+                border-radius: 12px;
+            }
+
+            .icon1 { font-size: 1.4rem; }
+            .card2 h2 { font-size: 0.9rem; }
+            .kn-sub { font-size: 0.65rem; }
+            .desc { font-size: 0.65rem; }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes cardPop {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Staggered Delay */
+        .card2:nth-child(1) { animation-delay: 0.1s; }
+        .card2:nth-child(2) { animation-delay: 0.15s; }
+        .card2:nth-child(3) { animation-delay: 0.2s; }
+        .card2:nth-child(4) { animation-delay: 0.25s; }
+        .card2:nth-child(5) { animation-delay: 0.3s; }
+        .card2:nth-child(6) { animation-delay: 0.35s; }
+        .card2:nth-child(7) { animation-delay: 0.4s; }
+        .card2:nth-child(8) { animation-delay: 0.45s; }
+        
 </style>
 </head>
 
 <body>
 
-<div id="loader">
-  <div class="pulse-ring"></div>
-  <div class="center">
-    <div class="logo">
-      <span></span><span></span><span></span>
-    </div>
-    <p class="text">Proud Karnataka</p>
-    <p class="kannada">ಕರ್ನಾಟಕ – ಹೆಮ್ಮೆ ನಮ್ಮದು</p>
-  </div>
-</div>
+<!--<div id="loader">-->
+<!--  <div class="pulse-ring"></div>-->
+<!--  <div class="center">-->
+<!--    <div class="logo">-->
+<!--      <span></span><span></span><span></span>-->
+<!--    </div>-->
+<!--    <p class="text">Proud Karnataka</p>-->
+<!--    <p class="kannada">ಕರ್ನಾಟಕ – ಹೆಮ್ಮೆ ನಮ್ಮದು</p>-->
+<!--  </div>-->
+<!--</div>-->
 
 <nav>
   <h2>Sabanna Master</h2>
@@ -328,6 +482,7 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
     <li onclick="go('home')">Home</li>
   </ul>
 </nav>
+
 
 <section class="hero" id="home">
   <div class="hero-text">
@@ -346,6 +501,8 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
     <img src="success5.png">
   </div>
 </section>
+
+
 
 <<div class="body1">
 <div class="studentgrowthhub">
@@ -382,9 +539,79 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
         <h3>Part-Time Work for Students</h3>
         <span class="tag1">ಪಾರ್ಟ್ ಟೈಮ್ ಕೆಲಸ</span>
     </div>
+</div>
 
+<div class="">
+    <div class="">
+    <div class="root1">
+    <header class="header1">
+        <h1>Life Core</h1>
+        <p>ಮುನ್ನಡೆಯಲು ಸ್ಫೂರ್ತಿ • Inspiration to Grow</p>
+    </header>
+    </div>
+
+    <div class="container2">
+        <div class="card2">
+            <span class="icon1">🌱</span>
+            <h2>Evolve</h2>
+            <span class="kn-sub">ವಿಕಸನ</span>
+            <p class="desc">Never stop learning.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">🌊</span>
+            <h2>Flow</h2>
+            <span class="kn-sub">ಹರಿವು</span>
+            <p class="desc">Maintain momentum.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">📈</span>
+            <h2>Multiply</h2>
+            <span class="kn-sub">ವೃದ್ಧಿ</span>
+            <p class="desc">Earn and learn.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">🎯</span>
+            <h2>Axe</h2>
+            <span class="kn-sub">ಏಕಾಗ್ರತೆ</span>
+            <p class="desc">Master one skill.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">🛡️</span>
+            <h2>Core</h2>
+            <span class="kn-sub">ಶಿಸ್ತು</span>
+            <p class="desc">Daily consistency.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">🌳</span>
+            <h2>Roots</h2>
+            <span class="kn-sub">ಸಂಸ್ಕಾರ</span>
+            <p class="desc">Respect elders.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">⏳</span>
+            <h2>Gold</h2>
+            <span class="kn-sub">ಸಮಯ</span>
+            <p class="desc">Value your hours.</p>
+        </div>
+
+        <div class="card2">
+            <span class="icon1">👑</span>
+            <h2>Crown</h2>
+            <span class="kn-sub">ಗೌರವ</span>
+            <p class="desc">Self respect.</p>
+        </div>
+    </div>
+    </div>
 </div>
 </div>
+
+
 
 
 <a href="https://wa.me/919663321579" class="whatsapp">
@@ -418,6 +645,22 @@ setInterval(() => {
   currentIndex = (currentIndex + 1) % images.length;
   images[currentIndex].classList.add("active");
 }, 2000);
+
+
+ // Smooth Tilt Effect for Desktop only life core
+        if (window.innerWidth > 600) {
+            document.querySelectorAll('.card2').forEach(card2 => {
+                card2.addEventListener('mousemove', (e) => {
+                    const rect = card2.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    card2.style.transform = `perspective(1000px) rotateY(${x * 20}deg) rotateX(${-y * 20}deg) translateY(-8px)`;
+                });
+                card2.addEventListener('mouseleave', () => {
+                    card2.style.transform = `perspective(1000px) rotateY(0) rotateX(0) translateY(0)`;
+                });
+            });
+        }
 </script>
 
 </body>
