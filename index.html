@@ -147,8 +147,8 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
 }
 .video-container img.active {
   opacity: 1;
+  z-index: 1;
 }
-
 /* ===== BUTTONS ===== */
 .btn {
   padding: 15px 35px;
@@ -499,7 +499,7 @@ nav h2 { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
   </div>
 
   <div class="video-container">
-    <img src="success1.png" class="active">
+    <img src="success1.png">
     <img src="success2.jpg">
     <img src="success3.png">
     <img src="success4.png">
@@ -649,7 +649,7 @@ setInterval(() => {
   images[currentIndex].classList.remove("active");
   currentIndex = (currentIndex + 1) % images.length;
   images[currentIndex].classList.add("active");
-}, 2000);
+}, 3000);
 
 
  // Smooth Tilt Effect for Desktop only life core
